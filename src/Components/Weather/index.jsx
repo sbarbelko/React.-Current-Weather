@@ -20,11 +20,16 @@ function Weather() {
 
   useEffect(() => {
     loadWeather();
+
+    const reloadWeather = setInterval(loadWeather, 60000);
+    return () => {
+      clearInterval(reloadWeather);
+    };
   }, [windSpeed, temp]);
   const { current } = weather;
   return (
     <>
-      {error && <div>!!!ERROR!!! {JSON.stringify(error)}</div>}
+      {error && <div>!!!ERROR!!! {error}</div>}
       {isFetching && <div>Loading. Please wait...</div>}
       {!error && !isFetching && (
         <WeatherCard
