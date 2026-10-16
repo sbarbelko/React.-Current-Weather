@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./WeatherCard.module.sass";
 import { FaTemperatureArrowDown, FaTemperatureArrowUp } from "react-icons/fa6";
+import { TbWind } from "react-icons/tb";
 
 function WeatherCard(props) {
   const { weather, windSpeed, setWindSpeed, temp, setTemp } = props;
@@ -32,6 +33,7 @@ function WeatherCard(props) {
       <section>
         <p className={styles.currWeather}>Current Weather</p>
         <span>
+          <TbWind />
           {weather.wind_speed_10m} {windSpeed === "kmh" ? "Km/h" : "M/s"}
         </span>
         <span>
