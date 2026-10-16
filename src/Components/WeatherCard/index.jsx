@@ -16,7 +16,6 @@ function WeatherCard(props) {
           >
             <option value="kmh">km/h</option>
             <option value="ms">m/s</option>
-            <option value="mph">mph</option>
           </select>
         </label>
 
@@ -31,8 +30,12 @@ function WeatherCard(props) {
 
       <section>
         <p className={styles.currWeather}>Current Weather</p>
-        <span>{weather.wind_speed_10m}</span>
-        <span>{weather.temperature_2m}</span>
+        <span>
+          {weather.wind_speed_10m} {windSpeed === "kmh" ? "Km/h" : "M/s"}
+        </span>
+        <span>
+          {weather.temperature_2m} {temp === "celsius" ? "°C" : "°F"}
+        </span>
       </section>
     </article>
   );
