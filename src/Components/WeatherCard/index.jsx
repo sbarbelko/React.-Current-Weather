@@ -8,8 +8,8 @@ function WeatherCard(props) {
   return (
     <article className={styles.weatherCard}>
       <section>
-        <p>Wind speed unit:</p>
         <label>
+          <p>Wind speed unit:</p>
           <select
             value={windSpeed}
             onChange={(e) => setWindSpeed(e.target.value)}
@@ -19,8 +19,9 @@ function WeatherCard(props) {
             <option value="mph">mph</option>
           </select>
         </label>
-        <p>Temperature unit:</p>
+
         <label>
+          <p>Temperature unit:</p>
           <select value={temp} onChange={(e) => setTemp(e.target.value)}>
             <option value="celsius">Celsius</option>
             <option value="fahrenheit">Fahrenheit</option>
