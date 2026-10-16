@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./WeatherCard.module.sass";
 
 function WeatherCard(props) {
-  const { weather, windSpeed, windSpeedTemp } = props;
+  const { weather, windSpeed, setWindSpeed, temp, setTemp } = props;
   console.log("weather", weather);
 
   return (
@@ -12,7 +12,7 @@ function WeatherCard(props) {
         <label>
           <select
             value={windSpeed}
-            onChange={(e) => windSpeedTemp(e.target.value)}
+            onChange={(e) => setWindSpeed(e.target.value)}
           >
             <option value="kmh">km/h</option>
             <option value="ms">m/s</option>
@@ -20,6 +20,12 @@ function WeatherCard(props) {
           </select>
         </label>
         <p>Temperature unit:</p>
+        <label>
+          <select value={temp} onChange={(e) => setTemp(e.target.value)}>
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+          </select>
+        </label>
       </section>
 
       <section>
