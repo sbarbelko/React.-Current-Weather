@@ -1,7 +1,8 @@
 import "./App.css";
+import WeatherCard from "./Components/WeatherCard";
 
 function App() {
-  return <div></div>;
+  return <WeatherCard />;
 }
 
 export default App;
